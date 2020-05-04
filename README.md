@@ -6,7 +6,7 @@
 - Kubernetes in dev and prod
 - AWS Deployment
 - Multi-Container Deployments on AWS!
-- Dockerizing multiple containers
+- Dockerizing multiple containers (in Docker hub via travis )
 
 ## Shortcuts
 
