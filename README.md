@@ -6,6 +6,7 @@
 - Kubernetes in dev and prod
 - AWS Deployment
 - Multi-Container Deployments on AWS!
+- Dockerizing multiple containers
 
 ## Shortcuts
 
@@ -33,4 +34,16 @@
 
 - docker build -t sujith/<project_name>:latest<version_number> .
 - docker run sujith/<project_name>
+
   - Tagging an image
+
+- docker build -f Dockerfile.dev .
+
+  - To run a custome Docker file
+
+- docker run <docker_id>
+
+  - To run a custome Docker file
+
+- docker-compose up
+  - To run docker compose

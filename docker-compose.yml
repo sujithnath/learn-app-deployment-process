@@ -1,21 +1,15 @@
 version: "3"
 services:
-  web:
+  postgres:
+    image: "postgres:latest"
+    environment:
+      - POSTGRES_PASSWORD=postgres_password
+  redis:
+    image: "redis:latest"
+  server:
     build:
-      context: .
       dockerfile: Dockerfile.dev
-    stdin_open: "true"
-    ports:
-      - "3000:3000"
+      context: ./server
     volumes:
       - /app/node_modules
-      - .:/app
-  test:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    stdin_open: "true"
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: ["npm", "run", "test"]
+      - ./server:/app
