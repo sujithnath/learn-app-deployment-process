@@ -1,0 +1,27 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+# To run client
+before_install:
+  - docker build -t sujith/react-test -f ./client/Dockerfile.dev ./client
+
+# To run additional scripts from package json
+# -- --coverage helps in exiting the test after the test is done
+script:
+  - docker run -e CI=true sujith/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t sujith/multi-client ./client
+  - docker build -t sujith/multi-nginx ./nginx
+  - docker build -t sujith/multi-server ./server
+  - docker build -t sujith/multi-worker ./worker
+  # Login into docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push sujith/multi-client
+  - docker push sujith/multi-nginx
+  - docker push sujith/multi-server
+  - docker push sujith/multi-worker
