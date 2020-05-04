@@ -15,7 +15,7 @@ deploy:
   edge: true
   region: "us-east-1"
   app: "docker-cicd"
-  name: "DockerCicd-env"
+  name: "docker-cicd"
   env: "DockerCicd-env"
   bucket_name: "elasticbeanstalk-us-east-1-675106039996"
   bucket_path: "docker-cicd"
