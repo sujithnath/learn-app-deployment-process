@@ -1,4 +1,4 @@
-# FULLSTACK APP Deployment - CI/CD pipelines
+# FULLSTACK APP Deployment - CI/CD pipelines etc
 
 ## Features
 
@@ -13,5 +13,8 @@
   - A simple Heroku app with React + Node
 - NGINX
   - Full Node.js Deployment - NGINX, SSL
+- AWS
+  - Lambda
+    - Simple app for invoking functions
 - SSH
 - NodeJS AWS Deployment
